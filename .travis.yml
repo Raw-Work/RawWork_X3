@@ -24,6 +24,6 @@ script:
   - export STRIP="$HOME/android_prebuilt_toolchains/bin/aarch64-linux-androidkernel-"
   - cd $HOME/mt6795
   - chmod a+x kernel.sh
-  - ./kernel.sh
+  - ./travisci.sh
   
   
