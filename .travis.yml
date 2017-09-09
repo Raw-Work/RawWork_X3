@@ -23,7 +23,7 @@ script:
   - export CROSS_COMPILE="$HOME/android_prebuilt_toolchains/bin/aarch64-linux-androidkernel-"
   - export STRIP="$HOME/android_prebuilt_toolchains/bin/aarch64-linux-androidkernel-"
   - cd $HOME/mt6795
-  - chmod a+x kernel.sh
+  - chmod a+x travisci.sh
   - ./travisci.sh
   
   
