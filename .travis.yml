@@ -14,7 +14,7 @@ before_install:
 
 before_script:
 # Download the toolchain
-  - git clone "git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" "$HOME/darkabhi
+  - git clone "git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" "$HOME/darkabhi/
 # Download the Kernel Sources
   - git clone --branch=android-7.0 https://github.com/DarkAbhi/android_kernel_leeco_MT6795.git $HOME/darkabhi/android_kernel_leeco_MT6795
 
