@@ -74,6 +74,9 @@ series
 cscope.*
 ncscope.*
 
+#Out directory
+out
+
 # gnu global files
 GPATH
 GRTAGS
