@@ -33,16 +33,16 @@ blink_red='\033[05;31m'
 nocol='\033[0m'
 TC="UBERTC"
 # Modify the following variable if you want to build
-export KBUILD_BUILD_USER="darkabhi"
+export KBUILD_BUILD_USER="DarkAbhi"
 MODULES_DIR=$KERNEL_DIR/arch/arm/boot/AnyKernel2/modules
 if [ -d "/home/travis" ]; then
-export KBUILD_BUILD_HOST="TravisCI"
+export KBUILD_BUILD_HOST="AppleBerryCI"
 echo "Hello from Travis!"
 echo "Skipping export variables. I iz da kewl bot!"
 is_travis=true
 else
 echo "Hello Human!"
-export KBUILD_BUILD_HOST="Inspiron"
+export KBUILD_BUILD_HOST="Deepin"
 export ARCH=arm64
 export LD_LIBRARY_PATH="/home/darkabhi/aarch64-linux-android-gcc-4.9/lib"
 export CROSS_COMPILE="/home/darkabhi/aarch64-linux-android-gcc-4.9/bin/aarch64-linux-android-"
@@ -84,7 +84,7 @@ fi
 echo -e "$yellow***********************************************"
 echo "          Initialising DEFCONFIG        "
 echo -e "***********************************************$nocol"
-make x500_defconfig 
+make dark_defconfig 
 echo -e "$yellow***********************************************"
 echo "          Cooking Kernel         "
 echo -e "***********************************************$nocol"
