@@ -22,7 +22,7 @@
 KERNEL_DIR=$PWD
 KERNEL="Image.gz-dtb"
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
-BASE_VER="DARKSTAR"
+BASE_VER="v1.0"
 VER="-v1-$(date +"%Y-%m-%d"-%H%M)-"
 BUILD_START=$(date +"%s")
 
@@ -44,7 +44,7 @@ export CROSS_COMPILE=/home/darkabhi/aarch64-linux-android-4.9/bin/aarch64-linux-
 export JOBS=16
 export SUBARCH=arm
 export KBUILD_BUILD_USER="DarkAbhi"
-export KBUILD_BUILD_HOST="DarkStar-Server"
+export KBUILD_BUILD_HOST="DeepinBall"
 
 
 #COMPILATION SCRIPTS
@@ -54,7 +54,7 @@ echo "      Initializing build to compile Ver: $VER    "
 echo "--------------------------------------------------------"
 
 echo -e "$yellow***********************************************"
-echo "          Compiling DARKSTAR KERNEL!!      "
+echo "          Compiling KERNEL!!      "
 echo -e "***********************************************$nocol"
 
 rm -f $KERN_IMG
@@ -69,10 +69,10 @@ echo -e "$yellow***********************************************"
 echo "          Initialising DEFCONFIG        "
 echo -e "***********************************************$nocol"
 
-make -C $PWD O=$PWD/out ARCH=arm64 x500_defconfig 
+make -C $PWD O=$PWD/out ARCH=arm64 dark_defconfig 
 
 echo -e "$yellow***********************************************"
-echo "          Cooking DARKSTAR!!        "
+echo "          Cooking KERNEL!!        "
 echo -e "***********************************************$nocol"
 
 make -j$JOBS -C $PWD O=$PWD/out ARCH=arm64 KCFLAGS=-mno-android 
