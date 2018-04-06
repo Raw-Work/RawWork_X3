@@ -42,7 +42,7 @@ echo "Skipping export variables. I iz da kewl bot!"
 is_travis=true
 else
 echo "Hello Human!"
-export KBUILD_BUILD_HOST="Deepin"
+export KBUILD_BUILD_HOST="Arch"
 export ARCH=arm64
 export LD_LIBRARY_PATH="/home/darkabhi/aarch64-linux-android-gcc-4.9/lib"
 export CROSS_COMPILE="/home/darkabhi/aarch64-linux-android-gcc-4.9/bin/aarch64-linux-android-"

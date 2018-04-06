@@ -44,7 +44,7 @@ export CROSS_COMPILE=/home/darkabhi/aarch64-linux-android-4.9/bin/aarch64-linux-
 export JOBS=16
 export SUBARCH=arm
 export KBUILD_BUILD_USER="DarkAbhi"
-export KBUILD_BUILD_HOST="DeepinBall"
+export KBUILD_BUILD_HOST="Arch"
 
 
 #COMPILATION SCRIPTS
