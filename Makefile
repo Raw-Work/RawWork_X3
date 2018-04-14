@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 10
 SUBLEVEL = 108
-EXTRAVERSION =
+EXTRAVERSION = 
 NAME = END-OF-LIFE
 
 # *DOCUMENTATION*
@@ -373,6 +373,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
+		   -mtune=cortex-a53 \
+       	   -march=armv8-a \
 		   -fno-delete-null-pointer-checks \
 		   -Werror=format -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast \
 		   -std=gnu89
