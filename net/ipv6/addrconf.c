@@ -185,7 +185,7 @@ static struct ipv6_devconf ipv6_devconf __read_mostly = {
 	.rtr_solicit_interval	= RTR_SOLICITATION_INTERVAL,
 	.rtr_solicit_delay	= MAX_RTR_SOLICITATION_DELAY,
 #ifdef CONFIG_IPV6_PRIVACY
-	.use_tempaddr 		= 1,
+	.use_tempaddr 		= 0,
 	.temp_valid_lft		= TEMP_VALID_LIFETIME,
 	.temp_prefered_lft	= TEMP_PREFERRED_LIFETIME,
 	.regen_max_retry	= REGEN_MAX_RETRY,
@@ -223,7 +223,7 @@ static struct ipv6_devconf ipv6_devconf_dflt __read_mostly = {
 	.rtr_solicit_interval	= RTR_SOLICITATION_INTERVAL,
 	.rtr_solicit_delay	= MAX_RTR_SOLICITATION_DELAY,
 #ifdef CONFIG_IPV6_PRIVACY
-	.use_tempaddr		= 1,
+	.use_tempaddr		= 0,
 	.temp_valid_lft		= TEMP_VALID_LIFETIME,
 	.temp_prefered_lft	= TEMP_PREFERRED_LIFETIME,
 	.regen_max_retry	= REGEN_MAX_RETRY,
@@ -3269,7 +3269,7 @@ static void addrconf_rs_timer(unsigned long data)
 		 * Note: we do not support deprecated "all on-link"
 		 * assumption any longer.
 		 */
-		printk("%s: no IPv6 routers present\n", idev->dev->name);
+		pr_debug("%s: no IPv6 routers present\n", idev->dev->name);
 	}
 
 out:
@@ -4707,8 +4707,7 @@ static void __ipv6_ifa_notify(int event, struct inet6_ifaddr *ifp)
 		addrconf_leave_solict(ifp->idev, &ifp->addr);
 		dst_hold(&ifp->rt->dst);
 
-		if (ip6_del_rt(ifp->rt))
-			dst_free(&ifp->rt->dst);
+		ip6_del_rt(ifp->rt);
 		break;
 	}
 	atomic_inc(&net->ipv6.dev_addr_genid);
@@ -4758,8 +4757,6 @@ static int inet6_fill_nora(struct sk_buff *skb, struct inet6_dev *idev,
     struct net_device *dev = idev->dev;
 	struct nlmsghdr *nlh;
 	struct ifinfomsg *hdr;
-	void *protoinfo;
-	char *name;
 	
 	nlh = nlmsg_put(skb, portid, seq, event, sizeof(*hdr), flags);
 	if (nlh == NULL)
@@ -4775,10 +4772,6 @@ static int inet6_fill_nora(struct sk_buff *skb, struct inet6_dev *idev,
 
 	return nlmsg_end(skb, nlh);
 
-
-nla_put_failure:
-	nlmsg_cancel(skb, nlh);
-	return -EMSGSIZE;
 }
 #ifdef CONFIG_SYSCTL
 

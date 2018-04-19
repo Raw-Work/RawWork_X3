@@ -147,7 +147,6 @@ static struct hlist_head *unix_sockets_unbound(void *addr)
 
 //for aee interface start
 #define __UNIX_SOCKET_OUTPUT_BUF_SIZE__   3500
-static struct proc_dir_entry *gunix_socket_track_aee_entry = NULL;
 #define UNIX_SOCK_TRACK_AEE_PROCNAME "driver/usktrk_aee"
 #define UNIX_SOCK_TRACK_PROC_AEE_SIZE 3072
 
