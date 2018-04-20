@@ -36,10 +36,10 @@
 #define DRIVER_SUBVER                 0
 #endif
 
-#define DEFAULT_CPU_LOAD_THRESHOLD   (65)
+#define DEFAULT_CPU_LOAD_THRESHOLD   (80)
 #define MIN_CPU_LOAD_THRESHOLD       (10)
 
-#define HOTPLUG_ENABLED              (0)
+#define HOTPLUG_ENABLED              (1)
 #define DEFAULT_HOTPLUG_STYLE         HOTPLUG_SCHED
 #define DEFAULT_SCHED_MODE            BALANCED
 
@@ -50,7 +50,7 @@
 
 static bool isSuspended = false;
 
-static int suspend_cpu_num = 2, resume_cpu_num = (NR_CPUS -1);
+static int suspend_cpu_num = 1, resume_cpu_num = (NR_CPUS -1);
 static int endurance_level = 0;
 static int core_limit = NR_CPUS;
 
