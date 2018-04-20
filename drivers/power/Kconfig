@@ -366,6 +366,12 @@ config CHARGER_BQ2589X
 	  You'll need this driver to charge batteries on e.g. Nokia
 	  RX-51/N900.
 
+config THUNDERCHARGE_CONTROL
+     bool "Enable ThunderCharge Charging Current Controlling mechanism"
+     depends on QPNP_SMBCHARGER
+     help
+       Say Y here to enable ability to adjust charger current
+
 config AB8500_BM
 	bool "AB8500 Battery Management Driver"
 	depends on AB8500_CORE && AB8500_GPADC
