@@ -17,7 +17,7 @@ before_script:
 # Download the toolchain
   - git clone "https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" "$HOME/android_prebuilt_toolchains"
 # Download the Kernel Sources
-  - git clone --branch=nougat https://github.com/DarkAbhi/android_kernel_leeco_MT6795.git $HOME/mt6795
+  - git clone --branch=oreo https://github.com/Raw-Work/RawWork_X3.git $HOME/mt6795
 
 script:
   - export ARCH=arm64
